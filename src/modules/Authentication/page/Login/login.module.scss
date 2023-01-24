@@ -1,0 +1,199 @@
+@import "/src/assets/scss/main.scss";
+
+.login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+	.loginForm {
+		width: 350px;
+		height: 450px;
+		background-color: var(--background);
+		border-radius: 15px;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		padding: 20px;
+
+		.loginHeader {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+
+			img {
+				width: 40px;
+				height: 40px;
+			}
+
+			.loginTitle {
+				color: $color-main;
+				font-size: 20px;
+			}
+		}
+
+		.loginBody {
+			margin-top: 50px;
+
+			.loginGroup {
+				height: 77px;
+
+				.loginBox {
+					display: flex;
+					align-items: center;
+
+					.loginIcon {
+						width: 50px;
+						height: 100%;
+						text-align: center;
+						font-size: 25px;
+						color: $color-main;
+					}
+
+					.loginField {
+						position: relative;
+						width: 100%;
+						height: 50px;
+
+						input {
+							width: 100%;
+							height: 100%;
+							border: 2px solid $color-gray-2;
+							border-radius: 6px;
+							outline: none;
+							padding: 0 15px;
+							font-size: 15px;
+							letter-spacing: 1px;
+							&:focus,
+							&:not(:placeholder-shown) {
+								border: 2px solid $color-main;
+								~ label {
+									top: 0;
+									left: 5px;
+									font-size: 12px;
+									font-weight: $fw-5;
+									color: $color-main;
+									background: $color-light;
+									border-radius: 10px;
+									padding: 0 5px;
+								}
+							}
+							&:not(:focus) {
+								border: 2px solid $color-gray-2;
+								~ label {
+									color: $color-gray;
+								}
+							}
+						}
+
+						label {
+							position: absolute;
+							top: 50%;
+							left: 15px;
+							transform: translateY(-50%);
+							transition: all 0.3s;
+							color: $color-gray;
+							font-size: 15px;
+							pointer-events: none;
+						}
+
+						.loginShowPass {
+							position: absolute;
+							top: 50%;
+							right: 20px;
+							transform: translateY(-50%);
+							color: $color-gray;
+							font-size: 20px;
+							user-select: none;
+							cursor: pointer;
+						}
+					}
+				}
+
+				.loginError {
+					margin-top: 2px;
+					margin-left: 45px;
+					color: red;
+					font-size: 13px;
+					font-weight: $fw-4;
+				}
+			}
+
+			.loginButton {
+				text-align: center;
+
+				button {
+					@include button(
+						$color-main,
+						$color-light,
+						none,
+						6px,
+						none,
+						1px,
+						$fw-5,
+						pointer
+					);
+					padding: 15px 25px;
+					font-size: 15px;
+					opacity: 1;
+					transition: all 0.3s;
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+		}
+
+		.loginFooter {
+			margin-top: 60px;
+
+			.loginToRegister {
+				font-size: 14px;
+				color: $color-gray;
+
+				a {
+					position: relative;
+					color: $color-main;
+					font-weight: $fw-5;
+					&::before {
+						content: "";
+						position: absolute;
+						bottom: -3px;
+						left: 0;
+						width: 0;
+						height: 1.5px;
+						background: $color-main;
+						transition: all 0.5s;
+					}
+					&:hover::before {
+						width: 100%;
+					}
+				}
+			}
+
+			.loginForgot {
+				display: inline-block;
+				font-size: 14px;
+				font-weight: $fw-5;
+				color: $color-main;
+				margin-top: 5px;
+				opacity: 1;
+				cursor: pointer;
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.login {
+		.loginForm {
+			width: 300px;
+			height: 420px;
+
+			.loginBody {
+				margin-top: 30px;
+			}
+		}
+	}
+}

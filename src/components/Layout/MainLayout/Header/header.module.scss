@@ -1,0 +1,80 @@
+@import "/src/assets/scss/main.scss";
+
+header {
+	width: 100%;
+	height: 100%;
+	background: var(--background);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.headerSearch {
+		// width: 70%;
+		flex: 1;
+	}
+
+	.headerLogo {
+		display: none;
+	}
+
+	.headerAction {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-right: 30px;
+
+		.headerMode {
+			width: 45px;
+			height: 45px;
+			background: rgba(0, 0, 0, 0.1);
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-left: 10px;
+		}
+
+		.headerCart {
+			@extend .headerMode;
+			color: var(--color-text);
+			font-size: 25px;
+			margin-right: 100px;
+			cursor: pointer;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	header {
+		.headerSearch {
+			display: none;
+		}
+
+		.headerLogo {
+			display: block;
+
+			a {
+				img {
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+
+		.headerAction {
+			width: unset;
+			padding-right: 0;
+
+			.headerMode {
+				background: unset;
+				margin-left: 0;
+			}
+
+			.headerCart {
+				background: unset;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+}

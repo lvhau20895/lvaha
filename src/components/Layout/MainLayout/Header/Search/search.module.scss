@@ -1,0 +1,147 @@
+@import "/src/assets/scss/main.scss";
+
+.search {
+	position: relative;
+	width: 350px;
+	height: 40px;
+	background: var(--background-sub);
+	border-radius: 6px;
+	border: 2px solid transparent;
+	margin: 0 auto;
+	&:focus-within {
+		border-color: $color-gray;
+		background: var(--background);
+		button {
+			background: var(--background);
+		}
+	}
+	form {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		input,
+		.searchClear,
+		.searchButton {
+			border: none;
+			outline: none;
+			background: transparent;
+			color: var(--color-text);
+		}
+
+		input {
+			height: 100%;
+			flex: 1;
+			padding: 0 15px;
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
+			font-weight: $fw-7;
+		}
+
+		.searchLoading {
+			width: 16px;
+			height: 16px;
+			animation: loading 1s linear infinite;
+		}
+		@keyframes loading {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		.searchClear {
+			width: 16px;
+			height: 16px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		.searchButton {
+			width: 40px;
+			height: 100%;
+			border-top-right-radius: 6px;
+			border-bottom-right-radius: 6px;
+			font-size: 16px;
+			margin-left: 10px;
+			cursor: pointer;
+			&:hover {
+				svg {
+					opacity: 0.5;
+					transform: scale(1.3);
+					transition: all 0.5s;
+				}
+			}
+		}
+	}
+
+	.searchResult {
+		position: absolute;
+		top: 50px;
+		left: 0;
+		width: 100%;
+		max-height: 400px;
+		background: var(--background);
+		border-radius: 6px;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		z-index: 9999;
+		&::-webkit-scrollbar-track {
+			border-radius: 10px;
+		}
+		&::-webkit-scrollbar {
+			width: 6px;
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			background-color: $color-gray-4;
+			display: none;
+		}
+		&:hover::-webkit-scrollbar-thumb {
+			display: block;
+		}
+
+		.searchItem {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			padding: 5px 10px;
+			&:hover {
+				background: var(--background-sub);
+				cursor: pointer;
+			}
+
+			.searchItemImage {
+				margin-right: 10px;
+
+				img {
+					width: 70px;
+					height: 70px;
+					object-fit: contain;
+				}
+			}
+
+			.searchItemTitle {
+				h1 {
+					color: var(--color);
+					font-size: 16px;
+					font-weight: $fw-5;
+				}
+
+				p {
+					color: $color-gray;
+					font-size: 14px;
+					margin: 4px 0;
+				}
+
+				span {
+					color: $color-main;
+				}
+			}
+		}
+	}
+}

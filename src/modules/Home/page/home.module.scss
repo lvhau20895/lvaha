@@ -1,0 +1,76 @@
+@import "/src/assets/scss/main.scss";
+
+.home {
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 25% 25% 25% 25%;
+	padding: 15px;
+
+	.homeBanner {
+		grid-column: 1 / span 3;
+		grid-row: 1 / span 2;
+		margin: 0 15px 0 0;
+		background: url("../../../../public/img/background/bg-banner.jpg") top /
+			cover no-repeat;
+		border-radius: 15px;
+	}
+
+	.homeMenu {
+		grid-row: 1 / span 3;
+		background: var(--background);
+		margin-bottom: 15px;
+		border-radius: 15px;
+	}
+
+	.homeTrends {
+		grid-column: 1 / span 3;
+		grid-row: 3 / span 2;
+		background: var(--background);
+		margin: 15px 15px 0 0;
+		border-radius: 15px;
+	}
+
+	.homeFooter {
+		background: var(--background);
+		border-radius: 15px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.home {
+		grid-template-rows: 200px auto auto auto;
+		padding: 0;
+
+		.homeBanner {
+			grid-row: 1 / span 1;
+			grid-column: 1 / span 4;
+			margin: 0;
+			padding: 15px;
+			border-radius: 0;
+		}
+
+		.homeMenu {
+			grid-row: 2 / span 1;
+			grid-column: 1 / span 4;
+			border-radius: 0;
+			border-bottom-left-radius: 30px;
+			border-bottom-right-radius: 30px;
+			margin-bottom: 0;
+		}
+
+		.homeTrends {
+			grid-row: 3 / span 1;
+			grid-column: 1 / span 4;
+			border-radius: 0;
+			margin: 0;
+			background: var(--background-sub);
+		}
+
+		.homeFooter {
+			grid-row: 4 / span 1;
+			grid-column: 1 / span 4;
+			border-radius: 0;
+		}
+	}
+}

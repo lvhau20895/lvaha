@@ -1,0 +1,64 @@
+@import "/src/assets/scss/main.scss";
+
+footer {
+	margin: 15px;
+
+	.footerInfo {
+		.footerInfoItem {
+			display: flex;
+			align-items: center;
+			margin-bottom: 5px;
+
+			.footerIcon {
+				font-size: 20px;
+				color: $color-gray;
+				margin-right: 10px;
+			}
+
+			.footerDetails {
+				font-size: 14px;
+				font-weight: $fw-5;
+				color: $color-gray;
+			}
+			.footerLink:hover {
+				color: $color-main;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.footerCopyright {
+		text-align: center;
+		margin-top: 10px;
+		padding-top: 10px;
+		border-top: 1px solid $color-gray;
+
+		p {
+			font-size: 14px;
+			color: $color-main;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	footer {
+		.footerInfo {
+			.footerInfoItem {
+				.footerIcon {
+					font-size: 18px;
+				}
+			}
+		}
+
+		.footerCopyright {
+			margin-top: 10px;
+			padding-top: 10px;
+			border-top: 1px solid $color-gray;
+
+			p {
+				font-size: 12px;
+				color: $color-main;
+			}
+		}
+	}
+}

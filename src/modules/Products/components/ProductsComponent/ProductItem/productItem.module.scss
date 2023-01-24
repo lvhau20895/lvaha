@@ -1,0 +1,119 @@
+@import "/src/assets/scss/main.scss";
+
+.productItem.Mobile,
+.productItem.Tablet {
+	height: 430px;
+}
+
+.productItem.Laptop {
+	height: 350px;
+}
+
+.productItem.Watch,
+.productItem.Headphone {
+	height: 330px;
+}
+
+.productItem.Speaker {
+	height: 380px;
+}
+
+.productItem {
+	width: 100%;
+	height: auto;
+	background: var(--background-sub);
+	border-radius: 15px;
+	padding: 15px;
+	&:hover {
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		img {
+			transform: scale(1.05) translateY(-25px);
+		}
+
+		h1 {
+			color: $color-main;
+		}
+	}
+
+	.productItemImage {
+		padding-bottom: 10px;
+
+		img {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+			height: 100%;
+			object-fit: contain;
+			transition: transform 0.2s linear;
+		}
+	}
+
+	.productItemDescription {
+		.productItemStatus {
+			margin-bottom: 8px;
+
+			.productItemHot,
+			.productItemOutOfStock {
+				display: inline-block;
+				padding: 5px 8px;
+				border-radius: 6px;
+				margin-right: 5px;
+				font-size: 14px;
+			}
+
+			.productItemHot {
+				background: $color-red;
+				color: $color-white;
+			}
+
+			.productItemOutOfStock {
+				background: $color-gray;
+				color: $color-white;
+			}
+		}
+
+		.productItemName {
+			font-size: 16px;
+			font-weight: $fw-5;
+			margin-bottom: 8px;
+		}
+
+		p {
+			font-size: 16px;
+			color: $color-gray;
+			margin-bottom: 8px;
+		}
+
+		.productItemRom {
+			margin-bottom: 8px;
+
+			.active {
+				background: $color-main;
+				color: var(--background);
+				border-color: $color-main;
+			}
+
+			button {
+				background: var(--background);
+				color: var(--color-text);
+				border-radius: 4px;
+				border: 1px solid $color-gray;
+				outline: none;
+				padding: 4px;
+				margin-right: 5px;
+				margin-bottom: 8px;
+				cursor: pointer;
+				&:hover {
+					background: $color-main;
+					color: var(--background);
+					border-color: $color-main;
+				}
+			}
+		}
+
+		span {
+			color: $color-blue;
+			font-weight: $fw-5;
+		}
+	}
+}

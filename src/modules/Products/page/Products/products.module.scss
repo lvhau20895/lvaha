@@ -1,0 +1,49 @@
+@import "/src/assets/scss/main.scss";
+
+.product {
+	height: 100%;
+	padding: 15px;
+
+	.productMain {
+		background: var(--background);
+		height: 100%;
+		border-radius: 15px;
+		padding: 15px 15px 0;
+
+		.productList {
+			border-radius: 15px;
+			background: var(--background);
+			margin-top: 30px;
+			padding-top: 10px;
+			max-height: 80%;
+			overflow-y: scroll;
+			&::-webkit-scrollbar-track {
+				border-radius: 10px;
+			}
+			&::-webkit-scrollbar {
+				width: 6px;
+				background-color: transparent;
+			}
+			&::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				background-color: $color-gray-4;
+				display: none;
+			}
+			&:hover::-webkit-scrollbar-thumb {
+				display: block;
+			}
+
+			.productType {
+				margin-bottom: 20px;
+
+				.productTypeTitle {
+					color: $color-main;
+					margin-bottom: 10px;
+					&::first-letter {
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+}

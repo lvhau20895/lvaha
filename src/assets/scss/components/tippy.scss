@@ -1,0 +1,29 @@
+.tippy-box[data-theme~="theme"] {
+	background: var(--color);
+	font-weight: $fw-5;
+	margin: 5px 10px;
+	p {
+		color: var(--background-sub);
+	}
+}
+
+.tippy-box[data-theme~="theme"][data-placement^="top"] > .tippy-arrow::before {
+	border-top-color: var(--color);
+}
+.tippy-box[data-theme~="theme"][data-placement^="bottom"]
+	> .tippy-arrow::before {
+	border-bottom-color: var(--color);
+}
+.tippy-box[data-theme~="theme"][data-placement^="left"] > .tippy-arrow::before {
+	border-left-color: var(--color);
+}
+.tippy-box[data-theme~="theme"][data-placement^="right"]
+	> .tippy-arrow::before {
+	border-right-color: var(--color);
+}
+
+@media screen and (max-width: 576px) {
+	.tippy-box {
+		display: none;
+	}
+}

@@ -1,0 +1,27 @@
+@import "/src/assets/scss/main.scss";
+
+.buttonType {
+	.buttonTypeLink {
+		display: inline-block;
+		border-radius: 10px;
+		border: none;
+		outline: none;
+		width: 120px;
+		height: 80px;
+		margin-right: 20px;
+		text-align: center;
+		line-height: 80px;
+		text-transform: capitalize;
+		font-size: 14px;
+		font-weight: $fw-7;
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		background: var(--background-sub);
+		color: var(--color-text);
+		cursor: pointer;
+
+		&:hover {
+			background: $color-main;
+			color: var(--background);
+		}
+	}
+}

@@ -1,0 +1,19 @@
+@mixin button(
+	$bg,
+	$color,
+	$border,
+	$borderRadius,
+	$outline,
+	$letterSpacing,
+	$fw,
+	$cursor
+) {
+	background: $bg;
+	color: $color;
+	border: $border;
+	border-radius: $borderRadius;
+	outline: $outline;
+	letter-spacing: $letterSpacing;
+	font-weight: $fw;
+	cursor: $cursor;
+}

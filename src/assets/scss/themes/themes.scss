@@ -1,0 +1,37 @@
+body.light {
+	--background: #fff;
+	--background-sub: #eee;
+	--background-theme-auth: linear-gradient(to bottom right, #fff, #ca8c2f);
+	--color: #000;
+	--color-text: #777;
+}
+
+body.dark {
+	--background: #222;
+	--background-sub: #333;
+	--background-theme-auth: linear-gradient(to bottom right, #111, #ca8c2f);
+	--color: #fff;
+	--color-text: #ccc;
+}
+
+body {
+	background: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--color);
+}
+
+div,
+p,
+ul,
+li,
+span,
+a {
+	color: var(--color);
+}

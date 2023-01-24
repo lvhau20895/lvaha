@@ -1,0 +1,12 @@
+@import "/src/assets/scss/main.scss";
+
+.productType {
+	height: 100%;
+	padding: 15px;
+
+	.productTypeMain {
+		height: 100%;
+		background: var(--background);
+		border-radius: 15px;
+	}
+}

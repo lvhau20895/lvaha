@@ -1,0 +1,62 @@
+@import "/src/assets/scss/main.scss";
+
+.mainLayout {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+
+	.mainLeft {
+		width: 20%;
+	}
+
+	.mainRight {
+		width: 80%;
+
+		.mainHeader {
+			height: 10%;
+		}
+
+		.mainOutlet {
+			height: 90%;
+			background: var(--background-sub);
+			border-top-left-radius: 15px;
+			border-bottom-left-radius: 15px;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.mainLayout {
+		display: unset;
+
+		.mainLeft,
+		.mainRight,
+		.mainHeader,
+		.mainOutlet {
+			width: 100%;
+		}
+
+		.mainLeft {
+			position: fixed;
+			bottom: 0;
+			z-index: 9999;
+		}
+
+		.mainRight {
+			.mainHeader {
+				position: fixed;
+				top: 0;
+				border-bottom: 2px solid var(--background-sub);
+				height: 60px;
+				z-index: 9999;
+			}
+
+			.mainOutlet {
+				margin-top: 60px;
+				margin-bottom: 62px;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+}

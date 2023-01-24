@@ -1,0 +1,39 @@
+@import "/src/assets/scss/main.scss";
+
+.system {
+	position: fixed;
+	top: 50%;
+	right: 0;
+	width: 50px;
+	height: auto;
+	background: var(--background-sub);
+	font-size: 30px;
+	border-radius: 10px;
+	margin: 0 20px;
+	padding: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	transition: transform 0.3s linear;
+	z-index: 9999;
+
+	.systemShowMenu {
+		position: absolute;
+		top: 50%;
+		left: -70%;
+		transform: translateY(-50%);
+		width: 35px;
+		height: 100px;
+		background: var(--background-sub);
+		text-align: center;
+		line-height: 100px;
+		font-size: 30px;
+		border-right: transparent;
+		border-top-left-radius: 6px;
+		border-bottom-left-radius: 6px;
+		transition: opacity 0.3s linear;
+		cursor: pointer;
+	}
+
+	.systemHideMenu {
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,25 @@
+@import "/src/assets/scss/main.scss";
+
+.authLayout {
+	background: var(--background-theme-auth);
+	width: 100%;
+	height: 100vh;
+
+	.authLogo {
+		position: fixed;
+		top: 20px;
+		left: 20px;
+	}
+
+	.authLayoutSystem {
+		ul li {
+			list-style: none;
+			margin-top: 10px;
+			color: $color-gray;
+			cursor: pointer;
+			&:hover {
+				color: $color-main;
+			}
+		}
+	}
+}

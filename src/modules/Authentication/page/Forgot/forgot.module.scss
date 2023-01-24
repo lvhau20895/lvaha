@@ -1,0 +1,249 @@
+@import "/src/assets/scss/main.scss";
+
+.forgot {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+	.forgotForm {
+		position: relative;
+		width: 350px;
+		height: 450px;
+		background-color: var(--background);
+		border-radius: 15px;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		padding: 20px;
+
+		.forgotReturn {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			font-size: 20px;
+
+			a {
+				color: $color-gray;
+				&:hover {
+					color: $color-main;
+				}
+			}
+		}
+
+		.forgotHeader {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			img {
+				width: 40px;
+				height: 40px;
+			}
+
+			.forgotTitle {
+				color: $color-main;
+				font-size: 20px;
+			}
+		}
+
+		.forgotBody {
+			margin-top: 50px;
+
+			.forgotNote {
+				margin-bottom: 15px;
+
+				p {
+					text-align: justify;
+					font-size: 16px;
+					font-weight: $fw-5;
+					color: $color-gray;
+				}
+			}
+
+			.forgotGroup {
+				height: 65px;
+
+				.forgotBox {
+					display: flex;
+					align-items: center;
+
+					.forgotIcon {
+						width: 40px;
+						height: 40px;
+						color: $color-main;
+						font-size: 20px;
+						text-align: center;
+						line-height: 40px;
+					}
+
+					.forgotField {
+						position: relative;
+						width: 100%;
+						height: 40px;
+
+						input {
+							width: 100%;
+							height: 100%;
+							border: 2px solid $color-gray-2;
+							border-radius: 6px;
+							outline: none;
+							padding: 0 10px;
+							font-size: 15px;
+							&:focus,
+							&:not(:placeholder-shown) {
+								border: 2px solid $color-main;
+
+								~ label {
+									top: 0;
+									left: 5px;
+									font-size: 12px;
+									font-weight: $fw-5;
+									background: $color-light;
+									color: $color-main;
+									border-radius: 10px;
+									padding: 0 5px;
+								}
+							}
+							&:not(:focus) {
+								border: 2px solid $color-gray-2;
+								~ label {
+									color: $color-gray;
+								}
+							}
+						}
+
+						label {
+							position: absolute;
+							top: 50%;
+							left: 10px;
+							transform: translateY(-50%);
+							transition: all 0.3s;
+							color: $color-gray;
+							pointer-events: none;
+							font-size: 14px;
+						}
+
+						.forgotShowPass {
+							position: absolute;
+							top: 50%;
+							right: 10px;
+							transform: translateY(-50%);
+							font-size: 20px;
+							color: $color-gray;
+							user-select: none;
+							cursor: pointer;
+						}
+					}
+				}
+
+				.forgotError {
+					margin-left: 35px;
+					margin-top: 2px;
+					font-size: 13px;
+					font-weight: $fw-4;
+					color: $color-red;
+				}
+			}
+
+			.forgotButton {
+				margin-top: 10px;
+				text-align: center;
+
+				button {
+					@include button(
+						$color-main,
+						$color-light,
+						none,
+						6px,
+						none,
+						1px,
+						$fw-5,
+						pointer
+					);
+					padding: 15px 25px;
+					font-size: 15px;
+					opacity: 1;
+					transition: all 0.3s;
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+
+			.forgotSuccess {
+				margin-top: 30px;
+
+				p {
+					font-size: 16px;
+					font-weight: $fw-5;
+				}
+
+				.forgotAlert {
+					color: $color-green;
+					pointer-events: none;
+					user-select: none;
+				}
+
+				.forgotPass {
+					color: $color-gray;
+
+					span {
+						color: var(--color);
+					}
+				}
+			}
+		}
+
+		.forgotFooter {
+			margin-top: 50px;
+
+			.forgotToRegister {
+				font-size: 14px;
+				color: $color-gray;
+				text-align: right;
+
+				a {
+					position: relative;
+					color: $color-main;
+					font-weight: $fw-5;
+					&::before {
+						content: "";
+						position: absolute;
+						bottom: -3px;
+						left: 0;
+						width: 0;
+						height: 1.5px;
+						background: $color-main;
+						transition: all 0.5s;
+					}
+					&:hover::before {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.forgot {
+		.forgotForm {
+			width: 300px;
+			height: 420px;
+
+			.forgotBody {
+				margin-top: 30px;
+
+				.forgotNote {
+					p {
+						font-size: 14px;
+					}
+				}
+
+				.forgotSuccess {
+					p {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
